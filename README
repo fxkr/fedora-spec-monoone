@@ -1,0 +1,12 @@
+Instructions for packaging the monoOne font for Fedora 20:
+
+mkdir -p build/SOURCES/
+spectool -g -C build/SOURCES/ monoone-fonts.spec
+cp monoone-fonts-fontconfig.conf build/SOURCES
+rpmbuild --define "_topdir $(realpath build)" -ba monoone-fonts.spec
+
+Note: this is my first package for Fedora, I'm neither familiar
+with their packaging process nor their policies.
+
+Homepage of monoOne: https://github.com/madmalik/monoOne
+
